@@ -1,0 +1,16 @@
+{
+  "name": "non-transitive-dice-game",
+  "version": "1.0.0",
+  "description": "A console-based non-transitive dice game with provably fair random generation",
+  "main": "game.js",
+  "scripts": {
+    "start": "node game.js",
+    "test": "node test.js"
+  },
+  "keywords": ["dice", "game", "cryptography", "hmac", "random"],
+  "author": "Aditya Singha",
+  "license": "Aditya Singha License",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
