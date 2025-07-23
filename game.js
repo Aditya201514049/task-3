@@ -277,7 +277,9 @@ class DiceGame {
         
         console.log(`My selection: ${result.computerNumber} (KEY=${result.key}).`);
         
-        return result.result === userChoice;
+        //return result.result === userChoice;
+        return result.computerNumber === userChoice;
+
     }
 
     async getUserDiceChoice(excludeIndex = -1) {
