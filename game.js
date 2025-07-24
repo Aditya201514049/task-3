@@ -1,7 +1,7 @@
 const crypto = require('crypto');
 const readline = require('readline');
 
-// Dice class - represents a single die with its face values
+
 class Dice {
     constructor(faces) {
         if (!Array.isArray(faces) || faces.length !== 6) {
@@ -25,7 +25,7 @@ class Dice {
     }
 }
 
-// Configuration parser - handles command line argument parsing
+
 class DiceConfigParser {
     static parse(args) {
         if (args.length < 3) {
@@ -61,7 +61,7 @@ class DiceConfigParser {
     }
 }
 
-// Cryptographic operations - handles secure random generation and HMAC
+
 class CryptoHelper {
     static generateSecureKey() {
         return crypto.randomBytes(32); // 256 bits
@@ -87,7 +87,7 @@ class CryptoHelper {
     }
 }
 
-// Fair random generation protocol
+
 class FairRandomGenerator {
     constructor(range) {
         this.range = range;
@@ -116,7 +116,7 @@ class FairRandomGenerator {
     }
 }
 
-// Probability calculator
+
 class ProbabilityCalculator {
     static calculateWinProbability(dice1, dice2) {
         let wins = 0;
@@ -150,7 +150,7 @@ class ProbabilityCalculator {
     }
 }
 
-// Table generator using ASCII art
+
 class TableGenerator {
     static generate(diceArray, probabilities) {
         const headers = diceArray.map(dice => dice.toString());
@@ -158,28 +158,28 @@ class TableGenerator {
         
         let table = 'Probability of the win for the user:\n';
         
-        // Top border
+        
         table += '+' + '-'.repeat(maxWidth + 2) + '+';
         for (let i = 0; i < headers.length; i++) {
             table += '-'.repeat(maxWidth + 2) + '+';
         }
         table += '\n';
         
-        // Header row
+        
         table += '| ' + 'User dice v'.padEnd(maxWidth) + ' |';
         for (const header of headers) {
             table += ' ' + header.padEnd(maxWidth) + ' |';
         }
         table += '\n';
         
-        // Separator
+        
         table += '+' + '-'.repeat(maxWidth + 2) + '+';
         for (let i = 0; i < headers.length; i++) {
             table += '-'.repeat(maxWidth + 2) + '+';
         }
         table += '\n';
         
-        // Data rows
+        
         for (let i = 0; i < headers.length; i++) {
             table += '| ' + headers[i].padEnd(maxWidth) + ' |';
             for (let j = 0; j < headers.length; j++) {
@@ -194,7 +194,7 @@ class TableGenerator {
             table += '\n';
         }
         
-        // Bottom border
+        
         table += '+' + '-'.repeat(maxWidth + 2) + '+';
         for (let i = 0; i < headers.length; i++) {
             table += '-'.repeat(maxWidth + 2) + '+';
@@ -205,7 +205,7 @@ class TableGenerator {
     }
 }
 
-// Main game class
+
 class DiceGame {
     constructor(diceArray) {
         this.dice = diceArray;
@@ -237,19 +237,19 @@ class DiceGame {
             
             console.log(`You choose the [${this.dice[userDiceIndex].toString()}] dice.`);
             
-            // Computer roll
+            
             console.log("It's time for my roll.");
             const computerRoll = await this.performRoll();
             const computerResult = this.dice[computerDiceIndex].getFace(computerRoll);
             console.log(`My roll result is ${computerResult}.`);
             
-            // User roll
+            
             console.log("It's time for your roll.");
             const userRoll = await this.performRoll();
             const userResult = this.dice[userDiceIndex].getFace(userRoll);
             console.log(`Your roll result is ${userResult}.`);
             
-            // Determine winner
+            
             if (userResult > computerResult) {
                 console.log(`You win (${userResult} > ${computerResult})!`);
             } else if (computerResult > userResult) {
@@ -387,7 +387,7 @@ All random number generation in this game is provably fair:
     }
 }
 
-// Main execution
+
 function main() {
     const args = process.argv.slice(2);
     
@@ -408,7 +408,7 @@ function main() {
     }
 }
 
-// Only run main if this file is executed directly
+
 if (require.main === module) {
     main();
 }
