@@ -5,7 +5,7 @@ node game.js
 node game.js 1,2,3,4,5,6 1,2,3,4,5,6
 
 *Invalid number of sides (e.g., less than 6 or more than 6)
-node game.js 2,2,4,4,9,9 6,8,1,1,8,6 7,5,3,7,5,3
+node game.js 2,2,4,4,9,9 6,8,1,1,8,6 7,5,3,7,5,3,1
 
 *Non-integer value in dice
 node game.js 1,2,3,a,5,6 1,2,3,4,5,6 1,2,3,4,5,6
