@@ -64,11 +64,11 @@ class DiceConfigParser {
 
 class CryptoHelper {
     static generateSecureKey() {
-        return crypto.randomBytes(32); // 256 bits
+        return crypto.randomBytes(32); 
     }
 
     static generateSecureRandomInRange(max) {
-        // Generate uniform random number in range [0, max]
+        
         const range = max + 1;
         const maxValid = Math.floor(256 / range) * range;
         
