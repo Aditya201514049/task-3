@@ -1,9 +1,4 @@
-const Dice = require('./src/Dice');
 const DiceConfigParser = require('./src/DiceConfigParser');
-const CryptoHelper = require('./src/CryptoHelper');
-const FairRandomGenerator = require('./src/FairRandomGenerator');
-const ProbabilityCalculator = require('./src/ProbabilityCalculator');
-const TableGenerator = require('./src/TableGenerator');
 const DiceGame = require('./src/DiceGame');
 
 function main() {
@@ -28,5 +23,7 @@ function main() {
 
 if (require.main === module) {
     main();
-}
+} 
+
+
 
