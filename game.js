@@ -69,15 +69,7 @@ class CryptoHelper {
 
     static generateSecureRandomInRange(max) {
         
-        const range = max + 1;
-        const maxValid = Math.floor(256 / range) * range;
-        
-        let randomByte;
-        do {
-            randomByte = crypto.randomBytes(1)[0];
-        } while (randomByte >= maxValid);
-        
-        return randomByte % range;
+        return crypto.randomInt(0, max+1);
     }
 
     static calculateHMAC(key, message) {
@@ -421,3 +413,4 @@ module.exports = {
     TableGenerator,
     DiceGame
 };
+
